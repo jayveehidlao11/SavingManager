@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ isset($description) ? $description : 'Dashboard'}}</title>
+    <title>{{ isset($description) ? $description : 'Dashboard' }}</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,47 +23,35 @@
 
 <body>
     @php
-     
+
     @endphp
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script>
-        $(function(){
-            
-            $(".navbar-nav > li").on('click',()=>{
-                $(this).find(".active").removeClass('active');
-                $(this).find('nav-item').addClass('active');
-            })
+        
+        $(function() {
+
+           
             $.ajax({
-                url:"{{ url('navigators')}}",
-                type:"get",
-                data:{},
-                success:function(data){
+                url: "{{ url('navigators') }}",
+                type: "get",
+                data: {},
+                success: function(data) {
                     $(".navigator-div").html(data);
                 }
             })
-        })  
-    </script>  
-    <div class="navigator-div"></div> 
+        })
+    </script>
+    <div class="navigator-div"></div>
     <div class="container-fluid p-2 ">
-        <div class="card">
-            <div class="card-header text-center bg-transparent ">
-           
-            </div>
-            <div class="card-body">
-                <div class="row ">
-                    <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 co-xl-12 text-center">
-                        <h4>    {{ isset($description) ? $description : 'Dashboard'}} </h4>
-                    </div>
-                    <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 co-xl-12">
-                        @yield('content')
-                    </div>
+        <div class="row ">
+            <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12 col-xl-12">
+                <div class="card " style="background-color: white">
+                <div class="card-body">
+                    @yield('content')
                 </div>
-              
             </div>
-            <div class="card-footer text-muted text-center">
-                Develop by : Jayvee O. Hidlao
-              </div> 
+            
         </div>
     </div>
-   
- 
+    </div>

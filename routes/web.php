@@ -26,3 +26,7 @@ Route::prefix('expenses')->group(function () {
     Route::get('/','ExpensesController@index');
 });
 
+#Savings Route
+Route::prefix('savings')->group(function () {
+    Route::get('/','SavingsController@index');
+});
