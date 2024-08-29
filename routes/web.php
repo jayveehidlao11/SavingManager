@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-#Home page
+#Dashboard page
 
 Route::get('/','DashBoardController@index');
 
 #navigator 
 Route::get('/navigators','MenusController@navigators'); 
+
 
 
 #Expenses Module
