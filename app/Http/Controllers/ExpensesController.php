@@ -15,6 +15,6 @@ class ExpensesController extends Controller
        $data = $request->all();
      
         return $this->toView($data);
-        
+         
     }
 }
