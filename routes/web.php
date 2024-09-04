@@ -25,6 +25,12 @@ Route::get('/navigators','MenusController@navigators');
 #Expenses Module
 Route::prefix('expenses')->group(function () {
     Route::get('/','ExpensesController@index');
+    Route::post('/insert','ExpensesController@insertNewExpenses')->name('newExpenses');
+    Route::get('/showExpenses','ExpensesController@showExpenses')->name('showExpenses');
+    Route::post('/processExpenses','ExpensesController@processExpenses')->name('processExistingExpenses');
+    Route::post('/editExpenses','ExpensesController@editExpenses')->name('editExpenses');
+    Route::get('/showExpenses/{encrypt}','ExpensesController@displayExpenses');
+    Route::post('/deleteExpenses','ExpensesController@deleteExpenses');
 });
 
 #Savings Route

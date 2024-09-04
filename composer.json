@@ -10,6 +10,7 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "laravelcollective/html": "^6.4",
         "nwidart/laravel-modules": "^10.0",
         "twbs/bootstrap": "4.0.0"
     },
@@ -32,7 +33,10 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+        "app/Helpers/HelperClass.php"
+        ]
     },
     "scripts": {
         "post-autoload-dump": [
